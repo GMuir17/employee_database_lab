@@ -11,12 +11,12 @@ import java.util.List;
 public class Manager extends Employee {
 
     private int budget;
-    private String department;
+    private Department department;
     private List<Administrator> administrators;
 
     public Manager() {}
 
-    public Manager(String name, int nI, int salary, int budget, String department) {
+    public Manager(String name, int nI, int salary, int budget, Department department) {
         super(name, nI, salary);
         this.budget = budget;
         this.department = department;
@@ -33,11 +33,11 @@ public class Manager extends Employee {
     }
 
     @Column(name = "department")
-    public String getDepartment() {
+    public Department getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(Department department) {
         this.department = department;
     }
 
