@@ -49,4 +49,8 @@ public class Manager extends Employee {
     public void setAdministrators(List<Administrator> administrators) {
         this.administrators = administrators;
     }
+
+    public void addAdmin(Administrator administrator){
+        this.administrators.add(administrator);
+    }
 }
