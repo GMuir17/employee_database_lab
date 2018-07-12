@@ -23,5 +23,7 @@ public class Runner {
 
         List<Administrator> administratorsOfManager1 = DBManager.findAdministratorsPerManager(manager1);
 
+        Department departmentOfManager = DBManager.findDepartmentForManager(manager1);
+
     }
 }
