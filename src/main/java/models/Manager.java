@@ -1,8 +1,6 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +14,9 @@ public class Manager extends Employee {
 
     public Manager() {}
 
-    public Manager(String name, int nI, int salary, int budget, Department department) {
+    public Manager(String name, int nI, int salary, int budget) {
         super(name, nI, salary);
         this.budget = budget;
-        this.department = department;
         this.administrators = new ArrayList<Administrator>();
     }
 
@@ -32,7 +29,7 @@ public class Manager extends Employee {
         this.budget = budget;
     }
 
-    @Column(name = "department")
+    @OneToOne(mappedBy = "manager", fetch = FetchType.LAZY)
     public Department getDepartment() {
         return department;
     }
@@ -41,7 +38,7 @@ public class Manager extends Employee {
         this.department = department;
     }
 
-    @Column(name = "administrators")
+    @OneToMany(mappedBy = "manager", fetch = FetchType.LAZY)
     public List<Administrator> getAdministrators() {
         return administrators;
     }

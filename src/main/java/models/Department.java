@@ -37,7 +37,8 @@ public class Department {
         this.title = title;
     }
 
-    @Column(name = "manager")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "manager_id", nullable = false)
     public Manager getManager() {
         return manager;
     }
